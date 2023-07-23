@@ -6,7 +6,7 @@ function displayMovies(moviesList) {
         parentDiv.innerHTML = '';
         moviesList.forEach((movie) => {
             let posterImage = 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
-            if(movie.Poster) {
+            if(movie.Poster != 'N/A') {
                 posterImage = movie.Poster; 
             }
             const movieDiv = document.createElement('div');
@@ -44,7 +44,7 @@ function displayMovieDetails(movie) {
         ratingAndComment.comment = commentsAndRatings[index].comment;
     }
     let posterImage = 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
-    if(movie.Poster) {
+    if(movie.Poster != 'N/A') {
        posterImage = movie.Poster; 
     }
     movieDetailsDiv.innerHTML +=
