@@ -4,11 +4,16 @@ body {
     padding: 0;
     background-color: #f0f0f0;
   }
-
+  .btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  .page-btns {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
   .search-container {
     margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
     align-items: center;
     display: flex;
     justify-content: left;

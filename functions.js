@@ -1,8 +1,9 @@
 
 function displayMovies(moviesList) {
     try {
+        console.log('display movies', movieTitle);
         const parentDiv = document.getElementById('movies-container');
-
+        parentDiv.innerHTML = '';
         moviesList.forEach((movie) => {
             const movieDiv = document.createElement('div');
             movieDiv.setAttribute('data-id', movie.imdbID);
@@ -105,4 +106,9 @@ function updateRatingAndDeleteThePopUP () {
 function userRatingExists(movieID) {
     const index = commentsAndRatings.findIndex(commentsAndRatings => commentsAndRatings.id == movieID);
     return (index != -1);
+}
+
+function getPageNumber() {
+    const pageSpan = document.getElementById('page-number');
+    return parseInt(pageSpan.innerHTML);
 }
