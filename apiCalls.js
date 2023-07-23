@@ -35,9 +35,7 @@ function movieDetailsByID (id) {
         return response.json(); 
     })
     .then(data => {
-        movies = movies.Search;
-        displayMovies(movies);
-        
+        displayMovieDetails(data);
         console.log(data);
     })
     .catch(error => {

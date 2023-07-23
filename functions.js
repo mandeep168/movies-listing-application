@@ -5,10 +5,14 @@ function displayMovies(moviesList) {
         const parentDiv = document.getElementById('movies-container');
         parentDiv.innerHTML = '';
         moviesList.forEach((movie) => {
+            let posterImage = 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
+            if(movie.Poster) {
+                posterImage = movie.Poster; 
+            }
             const movieDiv = document.createElement('div');
             movieDiv.setAttribute('data-id', movie.imdbID);
             movieDiv.innerHTML = 
-            `<img src=${movie.Poster} alt='movie poster' class='movie-poster'>
+            `<img src=${posterImage} alt='movie poster' class='movie-poster'>
             <div class='movie-name'>${movie.Title}</div>`;
             movieDiv.classList.add('movie-card');
             parentDiv.append(movieDiv);
@@ -39,12 +43,15 @@ function displayMovieDetails(movie) {
         ratingAndComment.rating = commentsAndRatings[index].rating;
         ratingAndComment.comment = commentsAndRatings[index].comment;
     }
-
+    let posterImage = 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
+    if(movie.Poster) {
+       posterImage = movie.Poster; 
+    }
     movieDetailsDiv.innerHTML +=
         `<div class="movie-details">
           <span class="close" id="closeBtn" onClick="updateRatingAndDeleteThePopUP()">&times;</span>
           <div class="movie-data">
-            <img src=${movie.Poster} alt="movie poster">
+            <img src=${posterImage} alt="movie poster">
             <h2 class="">${movie.Title}</h2>
             <p class="">Year: ${movie.Year}</p>
             <p class="">Rated: ${movie.Rated}</p>
